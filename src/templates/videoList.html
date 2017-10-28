@@ -1,0 +1,6 @@
+<ul class="video-list">
+  <video-list-entry ng-repeat = "video in $ctrl.videos track by $index" video = "video" ng-click="$ctrl.selectVideo($index)"/>
+</ul>
+<div class="loadMore">
+  <button ng-click="$ctrl.loadMoreVids()">Load More</button>
+</div>
