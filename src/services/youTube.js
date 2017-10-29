@@ -1,4 +1,4 @@
-angular.module('video-player')
+angular.module('the-game')
 .service('youTube', function($http) {
   this.search = function (context, query, num = 5, bool) {
     $http({

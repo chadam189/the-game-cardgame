@@ -1,7 +1,13 @@
 <div>
-  <h5>the deck {{$ctrl.deck}}</h5>
+  <h5>the draw pile <br>{{$ctrl.drawPile}}</h5>
+  <h5>pile 1: {{$ctrl.ascendingPile1}}</h5>
+  <h5>pile 2: {{$ctrl.ascendingPile2}}</h5>
+  <h5>pile 3: {{$ctrl.descendingPile1}}</h5>
+  <h5>pile 4: {{$ctrl.descendingPile2}}</h5>
+  <h5>Your hand: {{$ctrl.playerHand}}</h5>
 <!--   <pile 
     deck = "$ctrl.deck"
   
   /> -->
+  <button ng-click="$ctrl.startGameOver()">initialize the deck</button>
 </div>

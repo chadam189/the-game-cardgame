@@ -1,4 +1,4 @@
-angular.module('video-player')
+angular.module('the-game')
 
 .component('app', {
   // TODO
@@ -7,26 +7,60 @@ angular.module('video-player')
     // <
     // @
   },
-  controller: function (youTube) {
+  controller: function () {
     
-    this.deck = "deck is displayed";
+    this.deck = [];
+    this.drawPile = [];
+    this.isDrawPileEmpty = false;
+    this.playerHand = [];
+    this.ascendingPile1 = 1;
+    this.ascendingPile2 = 1;
+    this.descendingPile1 = 100;
+    this.descendingPile2 = 100;
+    this.table = {};
+    this.handLimit = 8;
     
-    this.startGame = () => {
+    
+    this.startGameOver = () => {
       // resets global variables
-        // deck
-        // piles 1-4
-      // calls shuffle
-      // deals out hand
-    };
+      // draw pile is reset
+      this.drawPile = [];
+      for (var i = 2; i <= 99; i++) {
+        this.drawPile.push(i);
+      }
     
-    this.shuffle = () => {
-      // randomize the deck for starting the game
+      // piles 1-4
+      this.isDrawPileEmpty = false;
+      this.ascendingPile1 = 1;
+      this.ascendingPile2 = 1;
+      this.descendingPile1 = 100;
+      this.descendingPile2 = 100;
+      // calls shuffle
+      this.playerHand = [];
+      // deals out hand
+      this.dealHand();
     };
     
     this.dealHand = () => {
       // deal hand to player 
-      // used for both init and during normal game play
+      for (var i = this.playerHand.length; (i < this.handLimit && !this.isDrawPileEmpty); i++) {
+        var card = this.drawCard();
+        this.playerHand.push(card);
+        this.playerHand.sort(function(a, b) { return a - b; });
+        this.drawPile[card - 1] = 'played';
+        this.isDrawPileEmpty = this.getDrawPileStatus();
+      }
     };
+    
+    this.drawCard = () => {
+      var newCard = Math.floor(Math.random() * 97) + 2;
+      while (this.drawPile[newCard - 1] === 'played') {
+        newCard = Math.floor(Math.random() * 97) + 2;
+      }
+      return newCard;
+    };
+    
+    this.getDrawPileStatus = () => {};
 
   },
   templateUrl: 'src/templates/app.html',
