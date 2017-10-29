@@ -12,6 +12,12 @@ angular.module('the-game')
     playerHand: '<'
     
   },
-  // TODO
+  
+  controller: function () {
+    this.displayDeck = function () {
+      
+    };
+  },
+  
   templateUrl: 'src/templates/tableTop.html'
 });

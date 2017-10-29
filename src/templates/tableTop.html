@@ -1,5 +1,12 @@
 <div>
-  <h5>the draw pile <br>{{$ctrl.drawPile}}</h5>
+<!--   <h5>Display the draw pile?</h5><input type="checkbox" ng-model="mustShow"> -->
+  
+
+  <div> 
+    <display-draw-pile
+      draw-pile = "$ctrl.drawPile"
+    />
+  </div>
   <h5>pile 1: {{$ctrl.ascendingPile1}}</h5>
   <h5>pile 2: {{$ctrl.ascendingPile2}}</h5>
   <h5>pile 3: {{$ctrl.descendingPile1}}</h5>
@@ -10,4 +17,5 @@
   
   /> -->
   <button ng-click="$ctrl.startGameOver()">initialize the deck</button>
+  
 </div>

@@ -1,4 +1,4 @@
-angular.module('video-player')
+angular.module('the-game')
 .component('videoList', {
   bindings: {
     videos: '<',
