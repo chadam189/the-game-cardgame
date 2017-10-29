@@ -9,49 +9,25 @@ angular.module('video-player')
   },
   controller: function (youTube) {
     
-    this.videoCount = 5;
-    this.videos = window.exampleVideoData;
-    this.currentVideo = this.videos[0];
-    youTube.search(this, '', this.videoCount, true);
-    this.currentSearchText = '';
+    this.deck = "deck is displayed";
     
-    this.selectVideo = (index) => {    
-      this.currentVideo = this.videos[index];
+    this.startGame = () => {
+      // resets global variables
+        // deck
+        // piles 1-4
+      // calls shuffle
+      // deals out hand
     };
     
+    this.shuffle = () => {
+      // randomize the deck for starting the game
+    };
     
-    this.searchResults = function (text) {
-      this.videoCount = 5;
-      this.currentSearchText = text;
-      youTube.search(this, text, this.videoCount, true);
-      
-    }.bind(this);
-    
-    this.keyEnter = function (event, text) {
-    
-      this.currentSearchText = text;
-      this.videoCount = 5;
-      if (event.key === 'Enter') {
-        youTube.search(this, text, this.videoCount, true);
-      }
-      
-    }.bind(this);
-    
-    this.userTypesSomething = function (event, text) {
-    
-      this.videoCount = 5;
-      this.currentSearchText = text;
-      youTube.search(this, text, this.videoCount, true);     
-         
-    }.bind(this);
-    
-    this.loadMoreVids = function (event) {
-      this.videoCount += 5;
-      youTube.search(this, this.currentSearchText, this.videoCount, false);     
-         
-    }.bind(this);
+    this.dealHand = () => {
+      // deal hand to player 
+      // used for both init and during normal game play
+    };
 
-    
   },
   templateUrl: 'src/templates/app.html',
 });

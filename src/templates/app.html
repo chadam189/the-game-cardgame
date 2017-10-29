@@ -1,14 +1,14 @@
 <div id="app container" >
   <nav class="navbar">
-    <div class="col-md-6 col-md-offset-3">
+<!--     <div class="col-md-6 col-md-offset-3">
       <search 
         new-search="$ctrl.searchResults"
         enter="$ctrl.keyEnter"
         user-types-something="$ctrl.userTypesSomething"
       />
-    </div>
+    </div> -->
   </nav>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-7">
       <video-player 
         current-video="$ctrl.currentVideo"
@@ -21,5 +21,16 @@
         load-more-vids = "$ctrl.loadMoreVids"
       />
     </div>
+  </div> -->
   <div>
+    <h3>Welcome to THE GAME</h3>
+  </div>
+  <div>
+    Hello
+    <br>
+ <!--    {{$ctrl.deck}} -->
+    <table-top
+      deck = "$ctrl.deck"
+    />
+  </div>
 </div>

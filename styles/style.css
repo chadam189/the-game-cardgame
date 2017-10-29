@@ -8,7 +8,7 @@ body {
   background: #fff;
   margin-bottom: 20px;
   width: 100%;
-  position: fixed;
+  float: left;
 }
 
 .navbar img {
@@ -88,8 +88,8 @@ body {
   padding-left: 20px;
 }
 
-h5 {
+/*h5 {
   border: 2px solid red;
   text-align: center;
   padding: 10px;
-}
+}*/

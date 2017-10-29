@@ -5,6 +5,7 @@ angular.module('video-player')
   bindings: {
     newSearch: '<',
     enter: '<',
+    deck: '<',
     userTypesSomething: '<'
     
   },
