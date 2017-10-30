@@ -27,13 +27,12 @@ angular.module('the-game')
     };
     
     this.generateDrawPileDisplay2 = function () {
-      debugger;
-      this.displayedDrawPile = [['--', '--']];
+      this.displayedDrawPile = [];
       for (var i = 0; i < 10; i++) {
         if (i === 0) {
-          this.displayedDrawPile[0] = this.displayedDrawPile[0].concat(this.drawPile.slice(0, 9));
+          this.displayedDrawPile.push(this.drawPile.slice(0, 9));
         } else {
-          this.displayedDrawPile.push(this.drawPile.slice(i * 10 + 1, 10 * (i + 1)));
+          this.displayedDrawPile.push(this.drawPile.slice((i * 10) - 1, (10 * i) + 9));
         }
         
         // for (var j = 0; j < 10; j++) {

@@ -1,21 +1,17 @@
 <div>
-<!--   <h5>Display the draw pile?</h5><input type="checkbox" ng-model="mustShow"> -->
-  
-
-  <div> 
-    <display-draw-pile
+  <div>
+    <display-four-piles
       draw-pile = "$ctrl.drawPile"
+      piles = "$ctrl.piles"
     />
   </div>
-  <h5>pile 1: {{$ctrl.ascendingPile1}}</h5>
-  <h5>pile 2: {{$ctrl.ascendingPile2}}</h5>
-  <h5>pile 3: {{$ctrl.descendingPile1}}</h5>
-  <h5>pile 4: {{$ctrl.descendingPile2}}</h5>
-  <h5>Your hand: {{$ctrl.playerHand}}</h5>
-<!--   <pile 
-    deck = "$ctrl.deck"
-  
-  /> -->
-  <button ng-click="$ctrl.startGameOver()">initialize the deck</button>
-  
+<!--   <h5>pile 1 (goes up, from 1 towards 100): {{$ctrl.ascendingPile1}}</h5>
+  <h5>pile 2 (goes up, from 1 towards 100): {{$ctrl.ascendingPile2}}</h5>
+  <h5>pile 3 (goes down, from 100 towards 1): {{$ctrl.descendingPile1}}</h5>
+  <h5>pile 4 (goes down, from 100 towards 1): {{$ctrl.descendingPile2}}</h5> -->
+  <div> 
+    <player-hand
+      player-hand = "$ctrl.playerHand"
+    />
+  </div>
 </div>

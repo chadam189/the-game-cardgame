@@ -1,40 +1,15 @@
 <div id="app container" >
-  <nav class="navbar">
-<!--     <div class="col-md-6 col-md-offset-3">
-      <search 
-        new-search="$ctrl.searchResults"
-        enter="$ctrl.keyEnter"
-        user-types-something="$ctrl.userTypesSomething"
-      />
-    </div> -->
-  </nav>
-  <!-- <div class="row">
-    <div class="col-md-7">
-      <video-player 
-        current-video="$ctrl.currentVideo"
-      />
-    </div>
-    <div class="col-md-5">
-      <video-list
-        videos = "$ctrl.videos"
-        select-video = "$ctrl.selectVideo"
-        load-more-vids = "$ctrl.loadMoreVids"
-      />
-    </div>
-  </div> -->
   <div>
-    <h3>Welcome to THE GAME<br></h3>
+    <nav-bar
+    start-game-over="$ctrl.startGameOver"
+    />
   </div>
   <div>
- <!--    {{$ctrl.drawPile}} -->
     <table-top
       draw-pile = "$ctrl.drawPile"
-      ascending-pile1 = "$ctrl.ascendingPile1"
-      ascending-pile2 = "$ctrl.ascendingPile2"
-      descending-pile1 = "$ctrl.ascendingPile1"
-      descending-pile2 = "$ctrl.ascendingPile2"
-      start-game-over = "$ctrl.startGameOver"
       player-hand = "$ctrl.playerHand"
+      game-has-started = "$ctrl.game-has-started"
+      piles = "$ctrl.piles"
     />
   </div>
 </div>

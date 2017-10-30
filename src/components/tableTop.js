@@ -9,7 +9,8 @@ angular.module('the-game')
     descendingPile1: '<',
     descendingPile2: '<',
     startGameOver: '<',
-    playerHand: '<'
+    playerHand: '<',
+    piles: '<'
     
   },
   
@@ -21,3 +22,5 @@ angular.module('the-game')
   
   templateUrl: 'src/templates/tableTop.html'
 });
+
+//stuff

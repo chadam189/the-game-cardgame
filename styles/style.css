@@ -1,22 +1,102 @@
-@import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
 
 body {
-  background: #f1f1f1;
+  /*background-image: url("https://awesomewallpapers.files.wordpress.com/2010/09/wood-wallpaper.png");*/
+  background-image: url("https://hdwallsource.com/img/2014/4/wood-wallpaper-10123-10482-hd-wallpapers.jpg");
+  padding: 1.5em;
+  font-family: arial, sans-serif;
+  color: white;
 }
 
-.navbar {
-  background: #fff;
+.navBar {
   margin-bottom: 20px;
   width: 100%;
+  display: inline;
+}
+
+.navBar button {
+  margin-left: 3em;
+  font-size: 60%;
+}
+
+.playerHand {
+  margin-top: 5em;
   float: left;
+  display: block;
+  width: 100%;
 }
 
-.navbar img {
-  height: 40px;
-  width: 50px;
+.pilesLayout {
+/*  margin-top: 5em;
+  margin-bottom: 5em;*/
+  display: inline;
+  padding-left: 8rem;
+  float: left;
+  width: 70%;
 }
 
-.search-bar {
+.drawPile {
+/*  margin-top: 5em;
+  margin-bottom: 5em;*/
+  display: inline;
+  float: left;
+  width: 30%;
+}
+
+.pilesRow {
+/*  margin-top: 5em;
+  margin-bottom: 5em;*/
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.card {
+  border: 0.3rem solid black;
+  display: inline;
+  margin: 0.1rem;
+  font: impact;
+  font-style: oblique;
+  font-weight: 800;
+  font-size: 250%;
+  border-radius: 12%;
+  color: black;
+  width: 7rem;
+  height: 10rem;
+  vertical-align: center;
+  text-align: center;
+}
+
+.hand {
+  float: left;
+  padding: 1.5rem;
+  background: linear-gradient(to bottom right, red, white);
+}
+
+.pile {
+  padding: 1.5em 1em 1.5em 1em;
+  background: linear-gradient(to bottom right, green, white);
+}
+
+.referencePile {
+  padding: 1em .7em 1em .7em;
+  background: linear-gradient(to bottom right, grey, white);
+}
+
+.pileIndicator {
+  border: 0.1em solid black;
+  margin: 0.1em;
+  padding: 1em;
+  display: inline;
+  font: impact;
+  font-style: oblique;
+  font-weight: 800;
+  font-size: 250%;
+}
+
+/*.search-bar {
   border-radius: 1px;
   background: #fff;
 }
@@ -88,7 +168,7 @@ body {
   padding-left: 20px;
 }
 
-/*h5 {
+h5 {
   border: 2px solid red;
   text-align: center;
   padding: 10px;

@@ -1,10 +1,8 @@
 <div>
-<!--   (THIS SHOULD ONLY DISPLAY IF THE BOX IS CHECKED)
-  <button ng-click="$ctrl.generateDrawPileDisplay()">Display the deck?</button> -->
-  <h5>Display the draw pile?</h5><input type="checkbox" ng-model="mustShow" ng-click="$ctrl.generateDrawPileDisplay2()">
-<!--   <button ng-click="$ctrl.generateDrawPileDisplay()">Click to generate the draw pile</button> -->
-  <ul ng-if="mustShow">
-    
-    <li ng-repeat = "row in $ctrl.displayedDrawPile track by $index">{{row}}</li>
-  </ul>
+  <h5>Display the draw pile?
+    <input type="checkbox" ng-model="mustShow" ng-click="$ctrl.generateDrawPileDisplay2()">
+    <ul ng-hide="mustShow">
+      <li ng-repeat = "row in $ctrl.displayedDrawPile track by $index">{{row}}</li>
+    </ul>
+  </h5>
 </div>

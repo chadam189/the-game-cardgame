@@ -1,0 +1,29 @@
+<div class="pilesLayout">
+  <div class=pilesRow>
+    <div class="card pile">
+      {{$ctrl.piles[0]}}
+    </div>
+    <div class="card referencePile">
+      100&uarr;1
+    </div>
+    <div class="card pile">
+      {{$ctrl.piles[1]}}
+    </div>
+  </div>
+  <div class="pilesRow">
+    <div class="card pile">
+      {{$ctrl.piles[2]}}
+    </div>
+    <div class="card referencePile">
+      100&darr;1
+    </div>
+    <div class="card pile">
+      {{$ctrl.piles[3]}}
+    </div>
+  </div>
+</div>
+<div> 
+  <display-draw-pile
+    draw-pile = "$ctrl.drawPile"
+  />
+</div>

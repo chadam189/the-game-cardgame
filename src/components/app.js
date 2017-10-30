@@ -11,18 +11,17 @@ angular.module('the-game')
     
     // this.deck = [];
     this.drawPile = [];
+    this.gameHasStarted = true;
     this.cardsRemaining = 98;
     this.playerHand = [];
-    this.ascendingPile1 = 1;
-    this.ascendingPile2 = 1;
-    this.descendingPile1 = 100;
-    this.descendingPile2 = 100;
+    this.piles = [1, 1, 100, 100];
     this.table = {};
     this.handLimit = 8;
     
     
     this.startGameOver = () => {
       // resets global variables
+      
       // draw pile is reset
       this.drawPile = [];
       for (var i = 2; i <= 99; i++) {
@@ -31,14 +30,11 @@ angular.module('the-game')
     
       // piles 1-4
       this.cardsRemaining = 98;
-      this.ascendingPile1 = 1;
-      this.ascendingPile2 = 1;
-      this.descendingPile1 = 100;
-      this.descendingPile2 = 100;
-      // calls shuffle
-      this.playerHand = [];
+      this.piles = [1, 1, 100, 100];
       // deals out hand
+      this.playerHand = [];
       this.dealHand();
+      this.gameHasStarted = true;
     };
     
     this.dealHand = () => {
@@ -48,31 +44,64 @@ angular.module('the-game')
         this.playerHand.push(card);
         this.cardsRemaining--;
         this.playerHand.sort(function(a, b) { return a - b; });
-        this.drawPile[card - 1] = 'played';
+        this.drawPile[card - 2] = 'played';
         // this.isDrawPileEmpty = this.getDrawPileStatus();
       }
     };
     
     this.drawCard = () => {
       var newCard = Math.floor(Math.random() * 97) + 2;
-      while (this.drawPile[newCard - 1] === '--') {
+      while (this.drawPile[newCard - 2] === 'played') {
         newCard = Math.floor(Math.random() * 97) + 2;
       }
       return newCard;
     };
     
-    // this.getDrawPileStatus = () => {};
+    // this.playCard = (cardValue, pileChoice) => {
+    //   var cardIndex = this.playerHand.indexOf(cardValue);
+      
+    //   if (this.playerHand[cardIndex] < this.piles[descendingPile1]) {
+    //     descendingPile1 = this.playerHand[cardIndex];
+    //     this.playerHand.splice(cardIndex, 1);
+    //   } else if (this.playerHand[cardIndex] === descendingPile1 + 10) {
+    //     descendingPile1 = this.playerHand[cardIndex] + 10;
+    //     this.playerHand.splice(cardIndex, 1);
+    //   } else {
+    //     console.log('This card can\'t be played on this pile...it\'s too high!');
+    //     return false;
+    //   }
+      
+    //   if (pileChoice === 1) {
+    //     if (this.playerHand[cardIndex] < descendingPile1) {
+    //       descendingPile1 = this.playerHand[cardIndex];
+    //       this.playerHand.splice(cardIndex, 1);
+    //     } else if (this.playerHand[cardIndex] === descendingPile1 + 10) {
+    //       descendingPile1 = this.playerHand[cardIndex] + 10;
+    //       this.playerHand.splice(cardIndex, 1);
+    //     } else {
+    //       console.log('This card can\'t be played on this pile...it\'s too high!');
+    //       return false;
+    //     }
+    //   }
+    //   if (pileChoice === 2) {
+    //     if (this.playerHand[cardIndex] > ascendingPile1) {
+    //       ascendingPile1 = this.playerHand[cardIndex];
+    //       this.playerHand.splice(cardIndex, 1);
+    //     } else if (this.playerHand[cardIndex] === ascendingPile1 - 10) {
+    //       ascendingPile1 = this.playerHand[cardIndex] - 10;
+    //       this.playerHand.splice(cardIndex, 1);
+    //     } else {
+    //       console.log('This card can\'t be played on this pile...it\'s too low!');
+    //       return false;
+    //     }
+    //   }
+
+    //   return true;
+    // };
 
   },
   templateUrl: 'src/templates/app.html',
 });
-
-for (var i = 0; i < 100000; i++) {
-  var temp = Math.floor(Math.random() * 97) + 2;
-  if (temp < 2 || temp > 99) {
-    console.log(temp);
-  }
-}
 
 
 

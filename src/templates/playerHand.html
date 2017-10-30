@@ -1,0 +1,6 @@
+<div class="playerHand">
+  <h5>Your Hand: {{$ctrl.hand}}</h5>
+  <ul>
+    <li class="card hand" ng-click="$ctrl.highlightCard($index)" ng-repeat = "card in $ctrl.playerHand track by $index">{{card}}</li>
+  </ul>
+</div>
